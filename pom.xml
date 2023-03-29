@@ -45,12 +45,13 @@
 </dependency>
 
 <!-- This is necessory to automatically download the driver executables-->	  
-<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager --> 
+<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
 <dependency>
-	 <groupId>io.github.bonigarcia</groupId>
-	  <artifactId>webdrivermanager</artifactId> 
-	  <version>3.8.1</version>
-	   </dependency>	
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>5.3.2</version>
+</dependency>
+	
 	    
 	<!-- This is use to read file-->	 
 	<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
