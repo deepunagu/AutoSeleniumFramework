@@ -17,8 +17,9 @@
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
-    <version>4.4.0</version>
+    <version>4.8.0</version>
 </dependency>
+
   <!-- This is the driver for my sql database-->
 	  <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 <dependency>
@@ -82,7 +83,11 @@
    
   </dependencies>
   
-  <build>
+  
+<profiles>
+	<profile>
+		<id>regionalreg</id>
+	<build>
 	 <plugins>
 	 <plugin> 
 	<groupId>org.apache.maven.plugins</groupId>
@@ -96,6 +101,85 @@
 	</plugin> 
 	 </plugins>
 	 </build>
+	</profile>
+	
+	<profile>
+		<id>batch</id>
+	<build>
+	 <plugins>
+	 <plugin> 
+	<groupId>org.apache.maven.plugins</groupId>
+	 <artifactId>maven-surefire-plugin</artifactId>
+	  <version>3.0.0</version>
+	 <configuration> 
+	  <suiteXmlFiles> 
+	  <suiteXmlFile>testng_BatchExecution.xml</suiteXmlFile>
+	  </suiteXmlFiles>
+	 </configuration> 
+	</plugin> 
+	 </plugins>
+	 </build>
+	</profile>
+	
+	<profile>
+		<id>smoke</id>
+	<build>
+	 <plugins>
+	 <plugin> 
+	<groupId>org.apache.maven.plugins</groupId>
+	 <artifactId>maven-surefire-plugin</artifactId>
+	  <version>3.0.0</version>
+	 <configuration> 
+	  <suiteXmlFiles> 
+	  <suiteXmlFile>testng_SmokeSuite.xml</suiteXmlFile>
+	  </suiteXmlFiles>
+	 </configuration> 
+	</plugin> 
+	 </plugins>
+	 </build>
+	</profile>
+	
+	
+	<profile>
+		<id>regression</id>
+	<build>
+	 <plugins>
+	 <plugin> 
+	<groupId>org.apache.maven.plugins</groupId>
+	 <artifactId>maven-surefire-plugin</artifactId>
+	  <version>3.0.0</version>
+	 <configuration> 
+	  <suiteXmlFiles> 
+	  <suiteXmlFile>testng_RegressionSuite.xml</suiteXmlFile>
+	  </suiteXmlFiles>
+	 </configuration> 
+	</plugin> 
+	 </plugins>
+	 </build>
+	</profile>
+	
+	
+	<profile>
+		<id>read</id>
+	<build>
+	 <plugins>
+	 <plugin> 
+	<groupId>org.apache.maven.plugins</groupId>
+	 <artifactId>maven-surefire-plugin</artifactId>
+	  <version>3.0.0</version>
+	 <configuration> 
+	  <suiteXmlFiles> 
+	  <suiteXmlFile>testng_Read.xml</suiteXmlFile>
+	  </suiteXmlFiles>
+	 </configuration> 
+	</plugin> 
+	 </plugins>
+	 </build>
+	</profile>
+	
+</profiles>  
+
+
   
   
   
